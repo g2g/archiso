@@ -1,0 +1,3 @@
+#!/bin/bash
+
+for N in $(seq 0 10) ; do ip link set ens${N} up ; done

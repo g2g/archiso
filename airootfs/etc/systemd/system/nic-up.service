@@ -1,0 +1,12 @@
+[Unit]
+Description=Run once NIC up
+After=local-fs.target
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/nic-up
+RemainAfterExit=true
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
