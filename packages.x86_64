@@ -31,8 +31,8 @@ perl-curses
 perl-curses-ui
 perl-locale-gettext
 perl-netaddr-ip
-perl-net-ssh2
-perl-net-cidr
+##perl-net-ssh2
+##perl-net-cidr
 #pv
 rsync
 screen
