@@ -65,9 +65,9 @@ make_packages() {
 }
 
 # Needed packages for x86_64 EFI boot
-make_packages_efi() {
-    ##setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "efitools" install
-}
+##make_packages_efi() {
+##    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "efitools" install
+##}
 
 # Copy mkinitcpio archiso hooks and build initramfs (airootfs)
 make_setup_mkinitcpio() {
@@ -254,7 +254,7 @@ run_once make_pacman_conf
 for arch in x86_64; do
     run_once make_basefs
     run_once make_packages
-    run_once make_packages_efi
+##  run_once make_packages_efi
     run_once make_setup_mkinitcpio
     run_once make_customize_airootfs
 done
