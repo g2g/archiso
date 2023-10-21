@@ -46,8 +46,7 @@ make_pacman_conf() {
 }
 
 make_basefs() {
-    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" init
-    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "haveged intel-ucode memtest86+ mkinitcpio-nfs-utils nbd zsh" install
+    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" .
 }
 
 make_packages() {
@@ -96,8 +95,8 @@ mkdir -p ${work_dir}
 
 run_once make_pacman_conf
 run_once make_basefs
-run_once make_packages
-run_once make_customize_airootfs
-run_once make_prepare
-run_once make_iso
+#run_once make_packages
+#run_once make_customize_airootfs
+#run_once make_prepare
+#run_once make_iso
 
